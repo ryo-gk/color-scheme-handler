@@ -1,6 +1,6 @@
 {
   "name": "color-scheme-handler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "handler of color-scheme dark or light",
   "main": "dist/color-scheme-handler.esm.js",
   "unpkg": "dist/color-scheme-handler.umd.js",
