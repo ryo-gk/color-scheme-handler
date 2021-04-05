@@ -2,12 +2,17 @@
 `color-scheme-handler` is a library to handle color-scheme such as light or dark.
 
 ## How to use
-### Install
-`npm install color-scheme-handler`<br>
-or<br>
-`yarn add color-scheme-handler`
+#### Install
 
-### Initial load
+```
+npm install color-scheme-handler
+```
+or
+```
+yarn add color-scheme-handler
+```
+
+#### Initial load
 You need to call `reflectCurrentColorScheme()` after Dom is loaded.<br>
 `reflectCurrentColorScheme` is a function which read color-scheme user use, and reflect css to :root.<br>
 If the user use dark mode, `.dark-mode` class is added to the root.<br>
@@ -19,7 +24,7 @@ import { reflectCurrentColorScheme } from 'color-handler-scheme'
 document.addEventListener('DOMContentLoaded', reflectCurrentColorScheme)
 ```
 
-### Write style for light mode and dark mode
+#### Write style for light mode and dark mode
 As mentioned above, `.light-mode` or `.dark-mode` class is added to the css root.<br>
 So you can write styles for each color scheme like this.
 
@@ -43,7 +48,7 @@ So you can write styles for each color scheme like this.
 }
 ```
 
-### Call "switchCurrentColorScheme" when change color scheme
+#### Call "switchCurrentColorScheme" when change color scheme
 You can call `switchCurrentColorScheme()` when you want to change color scheme dark -> light or light -> dark.<br>
 
 ```
@@ -53,10 +58,10 @@ document.getElementById('change-color-scheme').addEventListener('click', switchC
 ```
 
 ## Other API
-#### setColorScheme(type) <br>
+#### - setColorScheme(type) <br>
 Can set 'light' or 'dark' type as color scheme.
 
-#### getCurrentColorScheme() <br>
+#### - getCurrentColorScheme() <br>
 Can get current color scheme, 'light' or 'dark'
 
 
