@@ -1,1 +1,1 @@
-export type ColorSchemeType = 'light' | 'dark'
+declare type ColorSchemeType = 'light' | 'dark'
