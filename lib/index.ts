@@ -1,5 +1,6 @@
 import WebStorage from "./storage/WebStorage"
-import { ColorSchemeType } from './types/color-scheme-handler'
+
+export type ColorSchemeType = 'light' | 'dark'
 
 
 const COLOR_SCHEME = 'color-scheme'
