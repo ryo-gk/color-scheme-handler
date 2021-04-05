@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="base.css" />
+    <title>Color Scheme Handler Demo</title>
+</head>
+<body>
+  <div class="main">
+    <h2>Color Scheme Handler</h2>
+    <h3 id="current-color-scheme"></h3>
+    <button id="change-color-scheme">Change</button>
+    <div class="contents">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+<script type="text/javascript" src="color-scheme-handler.umd.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', ColorSchemeHandler.reflectCurrentColorScheme)
+  document.getElementById('current-color-scheme').innerHTML = `Mode: ${ColorSchemeHandler.getCurrentColorScheme()}`
+  document.getElementById('change-color-scheme').addEventListener('click', ColorSchemeHandler.switchCurrentColorScheme)
+</script>
+</body>
+</html>
