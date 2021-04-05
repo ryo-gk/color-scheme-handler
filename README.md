@@ -19,7 +19,7 @@ If the user use dark mode, `.dark-mode` class is added to the root.<br>
 And in case of light mode, `.light-mode` class is added to the root.
 
 ```
-import { reflectCurrentColorScheme } from 'color-handler-scheme'
+import { reflectCurrentColorScheme } from 'color-scheme-handler'
 
 document.addEventListener('DOMContentLoaded', reflectCurrentColorScheme)
 ```
@@ -52,7 +52,7 @@ So you can write styles for each color scheme like this.
 You can call `switchCurrentColorScheme()` when you want to change color scheme dark -> light or light -> dark.<br>
 
 ```
-import { switchCurrentColorScheme } from 'color-handler-scheme'
+import { switchCurrentColorScheme } from 'color-scheme-handler'
 
 document.getElementById('change-color-scheme').addEventListener('click', switchCurrentColorScheme)
 ```
