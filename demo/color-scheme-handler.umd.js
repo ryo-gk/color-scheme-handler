@@ -17,8 +17,8 @@
     };
 
     var COLOR_SCHEME = 'color-scheme';
-    function reflectCurrentColorScheme() {
-        if (isCurrentColorSchemeDark()) {
+    function reflectColorScheme() {
+        if (isColorSchemeDark()) {
             document.body.classList.remove('light-mode');
             document.body.classList.add('dark-mode');
         }
@@ -26,13 +26,27 @@
             document.body.classList.remove('dark-mode');
             document.body.classList.add('light-mode');
         }
-        setColorScheme(getCurrentColorScheme());
-        return getCurrentColorScheme();
+        setColorScheme(getColorScheme());
+        return getColorScheme();
     }
-    function switchCurrentColorScheme() {
-        var oldColor = getCurrentColorScheme();
+    function switchColorScheme() {
+        var oldColor = getColorScheme();
         var newColor = oldColor === 'light' ? 'dark' : 'light';
         setColorScheme(newColor);
+    }
+    function isColorSchemeDark() {
+        return getColorScheme() === 'dark';
+    }
+    function getColorScheme() {
+        var storage = new WebStorage('session');
+        if (storage.get(COLOR_SCHEME) == null) {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+        }
+        else {
+            return storage.get(COLOR_SCHEME);
+        }
     }
     function setColorScheme(type) {
         var storage = new WebStorage('session');
@@ -46,26 +60,12 @@
             document.body.classList.add('light-mode');
         }
     }
-    function isCurrentColorSchemeDark() {
-        return getCurrentColorScheme() === 'dark';
-    }
-    function getCurrentColorScheme() {
-        var storage = new WebStorage('session');
-        if (storage.get(COLOR_SCHEME) == null) {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light';
-        }
-        else {
-            return storage.get(COLOR_SCHEME);
-        }
-    }
 
-    exports.getCurrentColorScheme = getCurrentColorScheme;
-    exports.isCurrentColorSchemeDark = isCurrentColorSchemeDark;
-    exports.reflectCurrentColorScheme = reflectCurrentColorScheme;
+    exports.getColorScheme = getColorScheme;
+    exports.isColorSchemeDark = isColorSchemeDark;
+    exports.reflectColorScheme = reflectColorScheme;
     exports.setColorScheme = setColorScheme;
-    exports.switchCurrentColorScheme = switchCurrentColorScheme;
+    exports.switchColorScheme = switchColorScheme;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 

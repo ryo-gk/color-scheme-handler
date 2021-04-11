@@ -13,15 +13,15 @@ yarn add color-scheme-handler
 ```
 
 #### Initial load
-You need to call `reflectCurrentColorScheme()` after Dom is loaded.<br>
-`reflectCurrentColorScheme` is a function which read color-scheme user use, and reflect css to :root.<br>
+You need to call `reflectColorScheme()` after Dom is loaded.<br>
+`reflectColorScheme` is a function which read color-scheme user use, and reflect css to :root.<br>
 If the user use dark mode, `.dark-mode` class is added to the root.<br>
 And in case of light mode, `.light-mode` class is added to the root.
 
 ```
-import { reflectCurrentColorScheme } from 'color-scheme-handler'
+import { reflectColorScheme } from 'color-scheme-handler'
 
-document.addEventListener('DOMContentLoaded', reflectCurrentColorScheme)
+document.addEventListener('DOMContentLoaded', reflectColorScheme)
 ```
 
 #### Write style for light mode and dark mode
@@ -48,22 +48,30 @@ So you can write styles for each color scheme like this.
 }
 ```
 
-#### Call "switchCurrentColorScheme" when change color scheme
-You can call `switchCurrentColorScheme()` when you want to change color scheme dark -> light or light -> dark.<br>
+#### Call "switchColorScheme" when change color scheme
+You can call `switchColorScheme()` when you want to change color scheme dark -> light or light -> dark.<br>
 
 ```
-import { switchCurrentColorScheme } from 'color-scheme-handler'
+import { switchColorScheme } from 'color-scheme-handler'
 
-document.getElementById('change-color-scheme').addEventListener('click', switchCurrentColorScheme)
+document.getElementById('change-color-scheme').addEventListener('click', switchColorScheme)
 ```
 
-## Other API
+## API
+#### - reflectColorScheme() <br>
+Can reflect current color scheme according to session storage value if there is. If no value there, according to OS settings.
+
+#### - switchColorScheme() <br>
+Can switch current color scheme.
+
+#### - isColorSchemeDark() <br>
+Can get boolean value if current color scheme is dark.
+
+#### - getColorScheme() <br>
+Can get current color scheme, 'light' or 'dark'.
+
 #### - setColorScheme(type) <br>
 Can set 'light' or 'dark' type as color scheme.
-
-#### - getCurrentColorScheme() <br>
-Can get current color scheme, 'light' or 'dark'
-
 
 ## License
 Code released under [MIT license](LICENSE).

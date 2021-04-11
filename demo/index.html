@@ -19,9 +19,9 @@
   </div>
 <script type="text/javascript" src="color-scheme-handler.umd.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', ColorSchemeHandler.reflectCurrentColorScheme)
-  document.getElementById('current-color-scheme').innerHTML = `Mode: ${ColorSchemeHandler.getCurrentColorScheme()}`
-  document.getElementById('change-color-scheme').addEventListener('click', ColorSchemeHandler.switchCurrentColorScheme)
+  document.addEventListener('DOMContentLoaded', ColorSchemeHandler.reflectColorScheme)
+  document.getElementById('current-color-scheme').innerHTML = `Mode: ${ColorSchemeHandler.getColorScheme()}`
+  document.getElementById('change-color-scheme').addEventListener('click', ColorSchemeHandler.switchColorScheme)
 </script>
 </body>
 </html>
